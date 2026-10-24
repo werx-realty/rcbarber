@@ -105,6 +105,8 @@ h1,h2,h3{font-family:Montserrat,sans-serif;text-transform:uppercase;font-weight:
 #services{position:relative;height:100vh;height:100svh;overflow:hidden;background:#000;z-index:2;box-shadow:0 -40px 80px #000}
 #services .stage{position:absolute;left:75%;top:50%;width:min(50vw,860px);aspect-ratio:1200/893;transform:translate(-50%,-50%);}
 #services .stage canvas{width:100%;height:100%}
+#services .stage{-webkit-mask-image:radial-gradient(closest-side,#000 74%,transparent 100%);mask-image:radial-gradient(closest-side,#000 74%,transparent 100%)}
+#craft .stage{-webkit-mask-image:radial-gradient(closest-side,#000 80%,transparent 100%);mask-image:radial-gradient(closest-side,#000 80%,transparent 100%)}
 #services .stage,#craft .stage{will-change:transform,opacity}
 #toolsFall{position:absolute;inset:0;pointer-events:none;will-change:transform;z-index:2}
 #toolsFall .stage{pointer-events:auto}
@@ -435,8 +437,8 @@ class Seq{
   }
 }
 const chair=new Seq(document.getElementById('cvChair'),'chair',193,{fit:()=>innerWidth<=900?'cover':'contain',ax:()=>innerWidth<=900?.3:1,ay:1,reverse:true,fadeLeft:true});
-const tools=new Seq(document.getElementById('cvTools'),'tools',121,{fit:'contain',vig:.74});
-const sci=new Seq(document.getElementById('cvSci'),'scissors',293,{fit:'contain',vig:.8});
+const tools=new Seq(document.getElementById('cvTools'),'tools',121,{fit:'contain'});
+const sci=new Seq(document.getElementById('cvSci'),'scissors',293,{fit:'contain'});
 const chair2=new Seq(document.getElementById('cvChair2'),'chair',193,{fit:'contain',ax:.5,ay:.5,reverse:true,share:chair,vig:.76});
 const miniT=new Seq(document.getElementById('cvMiniT'),'tools',121,{fit:'contain',share:tools,vig:.8});
 const miniS=new Seq(document.getElementById('cvMiniS'),'scissors',293,{fit:'contain',share:sci,vig:.62});
