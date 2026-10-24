@@ -43,7 +43,7 @@ canvas{display:block}
 
 /* Nav */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--edge);transition:background .4s,padding .4s}
-nav.solid{background:rgba(0,0,0,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+nav.solid{background:rgba(0,0,0,.9);padding-top:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 .logo{display:flex;align-items:center;gap:12px}
 .logo svg{width:38px;height:38px}
 .logo b{display:block;font:800 15px/1 Montserrat;letter-spacing:.16em;text-transform:uppercase}
@@ -83,8 +83,7 @@ h1,h2,h3{font-family:Montserrat,sans-serif;text-transform:uppercase;font-weight:
 
 /* HERO */
 #hero{position:relative;height:100vh;height:100svh;overflow:hidden;background:#000;z-index:1}
-#hero .stage{position:absolute;top:0;bottom:0;left:calc(var(--edge) + 330px);right:0;
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%);mask-image:linear-gradient(90deg,transparent 0%,#000 26%)}
+#hero .stage{position:absolute;top:0;bottom:0;left:calc(var(--edge) + 330px);right:0}
 #hero .stage canvas{width:100%;height:100%}
 #hero .vig{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,transparent 20%,transparent 78%,#000 100%)}
 .hero-copy{position:absolute;left:var(--edge);top:50%;transform:translateY(-46%);width:min(600px,46vw);z-index:3}
@@ -104,8 +103,7 @@ h1,h2,h3{font-family:Montserrat,sans-serif;text-transform:uppercase;font-weight:
 
 /* SERVICES */
 #services{position:relative;height:100vh;height:100svh;overflow:hidden;background:#000;z-index:2;box-shadow:0 -40px 80px #000}
-#services .stage{position:absolute;left:75%;top:50%;width:min(50vw,860px);aspect-ratio:1200/893;transform:translate(-50%,-50%);
-  -webkit-mask-image:radial-gradient(closest-side,#000 74%,transparent 100%);mask-image:radial-gradient(closest-side,#000 74%,transparent 100%)}
+#services .stage{position:absolute;left:75%;top:50%;width:min(50vw,860px);aspect-ratio:1200/893;transform:translate(-50%,-50%);}
 #services .stage canvas{width:100%;height:100%}
 #services .stage,#craft .stage{will-change:transform,opacity}
 #toolsFall{position:absolute;inset:0;pointer-events:none;will-change:transform;z-index:2}
@@ -134,8 +132,7 @@ h1,h2,h3{font-family:Montserrat,sans-serif;text-transform:uppercase;font-weight:
 
 /* CRAFT */
 #craft{position:relative;height:100vh;height:100svh;overflow:hidden;background:#000;z-index:2}
-#craft .stage{position:absolute;right:4%;top:50%;width:min(50vw,88vh);aspect-ratio:1;transform:translateY(-50%);
-  -webkit-mask-image:radial-gradient(closest-side,#000 80%,transparent 100%);mask-image:radial-gradient(closest-side,#000 80%,transparent 100%)}
+#craft .stage{position:absolute;right:4%;top:50%;width:min(50vw,88vh);aspect-ratio:1;transform:translateY(-50%);}
 #craft .stage canvas{width:100%;height:100%}
 #craft .halo{position:absolute;right:4%;top:50%;width:min(50vw,88vh);aspect-ratio:1;transform:translateY(-50%);background:radial-gradient(circle,rgba(212,175,106,.12),transparent 62%);pointer-events:none}
 .craft-copy{position:absolute;left:var(--edge);top:50%;transform:translateY(-50%);width:min(620px,46vw);z-index:3;display:flex;flex-direction:column;gap:24px}
@@ -159,19 +156,17 @@ h1,h2,h3{font-family:Montserrat,sans-serif;text-transform:uppercase;font-weight:
 /* BOOK */
 #book{position:relative;height:100vh;height:100svh;min-height:680px;overflow:hidden;background:#000;z-index:2}
 #book .scene{position:absolute;left:75%;top:50%;width:min(44vw,82vh,760px);aspect-ratio:1;transform:translate(-50%,-50%)}
-#book .chairbox{position:absolute;inset:4%;border-radius:50%;overflow:hidden;
-  -webkit-mask-image:radial-gradient(closest-side,#000 76%,transparent 100%);mask-image:radial-gradient(closest-side,#000 76%,transparent 100%)}
+#book .chairbox{position:absolute;inset:4%;border-radius:50%;overflow:hidden}
 #book .chairbox canvas{width:100%;height:100%}
 #book .ring{position:absolute;inset:0;pointer-events:none}
 #book .ring svg{width:100%;height:100%;overflow:visible}
 #book .ring circle{fill:none;stroke:url(#rg);stroke-width:2.2;filter:url(#gl)}
-#book .mini{position:absolute;pointer-events:auto;
-  -webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
+#book .mini{position:absolute;pointer-events:auto;}
 #book .mini canvas{width:100%;height:100%}
 .hwrap{position:relative;display:inline-block;align-self:flex-start}
 .book-copy h2{position:relative}
 .book-copy{isolation:isolate}
-.book-copy .mini.t{position:absolute;z-index:-1;left:52%;top:50%;width:min(620px,46vw);aspect-ratio:1200/893;transform:translate(-30%,-50%);opacity:.4;pointer-events:none;-webkit-mask-image:radial-gradient(closest-side,#000 82%,transparent 100%);mask-image:radial-gradient(closest-side,#000 82%,transparent 100%)}
+.book-copy .mini.t{position:absolute;z-index:-1;left:52%;top:50%;width:min(620px,46vw);aspect-ratio:1200/893;transform:translate(-30%,-50%);opacity:.4;pointer-events:none}
 .book-copy .mini.t canvas{width:100%;height:100%}
 @media (max-width:900px){.book-copy .mini.t{width:100vw;left:50%;transform:translate(-50%,-50%)}}
 #book .mini.s{width:24%;aspect-ratio:1;right:-6%;bottom:2%}
@@ -400,13 +395,15 @@ footer{position:relative;z-index:2;background:#050504;border-top:1px solid var(-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+window.scrollTo(0,0);addEventListener('beforeunload',()=>window.scrollTo(0,0));
 document.getElementById('yr').textContent=new Date().getFullYear();
 gsap.registerPlugin(ScrollTrigger);
 
 /* ---------- Frame sequences on canvas ---------- */
 class Seq{
-  constructor(canvas,dir,count,{fit='cover',ax=.5,ay=.5,reverse=false,share=null,fadeLeft=false}={}){
-    Object.assign(this,{canvas,dir,count,fit,ax,ay,reverse,fadeLeft});
+  constructor(canvas,dir,count,{fit='cover',ax=.5,ay=.5,reverse=false,share=null,fadeLeft=false,vig=0}={}){
+    Object.assign(this,{canvas,dir,count,fit,ax,ay,reverse,fadeLeft,vig});
     this.ctx=canvas.getContext('2d');this.imgs=share?share.imgs:new Array(count);this.cur=0;
     if(share)share.subs.push(this);this.subs=[];
     new ResizeObserver(()=>this.resize()).observe(canvas);
@@ -434,14 +431,15 @@ class Seq{
     this.ctx.fillStyle='#000';this.ctx.fillRect(0,0,cw,ch);
     const x=(cw-w)*ax,y=(ch-h)*this.ay;this.ctx.drawImage(im,x,y,w,h);
     if(this.fadeLeft&&x>1){const g=this.ctx.createLinearGradient(x,0,x+w*.35,0);g.addColorStop(0,'#000');g.addColorStop(1,'rgba(0,0,0,0)');this.ctx.fillStyle=g;this.ctx.fillRect(x,0,w*.35,ch)}
+    if(this.vig){const r=Math.min(cw,ch)/2,v=this.ctx.createRadialGradient(cw/2,ch/2,r*this.vig,cw/2,ch/2,r);v.addColorStop(0,'rgba(0,0,0,0)');v.addColorStop(1,'#000');this.ctx.fillStyle=v;this.ctx.fillRect(0,0,cw,ch)}
   }
 }
 const chair=new Seq(document.getElementById('cvChair'),'chair',193,{fit:()=>innerWidth<=900?'cover':'contain',ax:()=>innerWidth<=900?.3:1,ay:1,reverse:true,fadeLeft:true});
-const tools=new Seq(document.getElementById('cvTools'),'tools',121,{fit:'contain'});
-const sci=new Seq(document.getElementById('cvSci'),'scissors',293,{fit:'contain'});
-const chair2=new Seq(document.getElementById('cvChair2'),'chair',193,{fit:'contain',ax:.5,ay:.5,reverse:true,share:chair});
-const miniT=new Seq(document.getElementById('cvMiniT'),'tools',121,{fit:'contain',share:tools});
-const miniS=new Seq(document.getElementById('cvMiniS'),'scissors',293,{fit:'contain',share:sci});
+const tools=new Seq(document.getElementById('cvTools'),'tools',121,{fit:'contain',vig:.74});
+const sci=new Seq(document.getElementById('cvSci'),'scissors',293,{fit:'contain',vig:.8});
+const chair2=new Seq(document.getElementById('cvChair2'),'chair',193,{fit:'contain',ax:.5,ay:.5,reverse:true,share:chair,vig:.76});
+const miniT=new Seq(document.getElementById('cvMiniT'),'tools',121,{fit:'contain',share:tools,vig:.8});
+const miniS=new Seq(document.getElementById('cvMiniS'),'scissors',293,{fit:'contain',share:sci,vig:.62});
 
 /* ---------- Split headings into words ---------- */
 document.querySelectorAll('.split > span').forEach(sp=>{
@@ -557,14 +555,15 @@ function init(){
     .fromTo(ring,{strokeDashoffset:C},{strokeDashoffset:0,ease:'power1.inOut',duration:.8},.1)
     .to('#miniS',{rotate:-260,y:-40,duration:1,ease:'none'},0)
     .to('#bookScene .ring',{rotate:120,duration:1,ease:'none'},0);
+  const c2={f:0};chair2.set(0);
+  gsap.to(c2,{f:192,ease:'none',onUpdate:()=>chair2.set(c2.f),scrollTrigger:{trigger:'#book',start:'top 45%',end:'top -170%',scrub:.8}});
   const mt={f:0};
   gsap.to(mt,{f:120,ease:'none',onUpdate:()=>miniT.set(mt.f),scrollTrigger:{trigger:'#book',start:'top 35%',end:'bottom top',scrub:.8}});
   const bk={chair:0,t:0,s:0,on:false,boost:0};
   ScrollTrigger.create({trigger:'#book',start:'top bottom',end:'bottom top',onToggle:s=>bk.on=s.isActive,onUpdate:s=>bk.boost=Math.min(4,Math.abs(s.getVelocity())/400)});
   gsap.ticker.add((t,dt)=>{
     if(!bk.on)return;const k=dt/1000*24*(1+bk.boost);bk.boost*=.92;
-    bk.chair=(bk.chair+k*.8)%193;bk.t=0;bk.s=(bk.s+k*2.4)%293;
-    chair2.cur=bk.chair;chair2.draw();miniS.cur=bk.s;miniS.draw();
+    bk.s=(bk.s+k*2.4)%293;miniS.cur=bk.s;miniS.draw();
   });
   ['miniS'].forEach(id=>{const el=document.getElementById(id);el.addEventListener('mouseenter',()=>{gsap.fromTo(el.firstElementChild,{rotate:0},{rotate:360,duration:1.2,ease:'power3.inOut'});bk.boost=4})});
 
@@ -580,7 +579,9 @@ function init(){
     b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.35,duration:.4})});
     b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}));
   });
+  ScrollTrigger.config({ignoreMobileResize:true});
   ScrollTrigger.refresh();
+  chair.set(0);
 }
 
 /* Cursor */
