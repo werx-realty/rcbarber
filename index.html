@@ -517,8 +517,8 @@ function init(){
   /* CRAFT — scissors drop in from the tools */
   const sf={f:0};
   /* tools fall while the scissors come out — same scroll range so they flow together */
-  gsap.to('#toolsStage',{yPercent:60,scale:.6,rotate:24,opacity:0,ease:'power1.in',
-    scrollTrigger:{trigger:'#craft',start:'top bottom',end:'top 20%',scrub:1}});
+  gsap.to('#toolsStage',{y:()=>innerHeight*.75,rotate:140,scale:.8,ease:'power1.in',
+    scrollTrigger:{trigger:'#craft',start:'top bottom',end:'top top',scrub:1,invalidateOnRefresh:true}});
   gsap.fromTo('#sciStage',{yPercent:-120,rotate:-50,scale:.6,opacity:0},{yPercent:-50,rotate:0,scale:1,opacity:1,ease:'power1.out',
     scrollTrigger:{trigger:'#craft',start:'top bottom',end:'top 5%',scrub:1}});
   gsap.from('.halo',{scale:.3,opacity:0,scrollTrigger:{trigger:'#craft',start:'top 60%',end:'top top',scrub:.5}});
