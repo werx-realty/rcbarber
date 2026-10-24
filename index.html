@@ -254,7 +254,7 @@ footer{position:relative;z-index:2;background:#050504;border-top:1px solid var(-
   <div class="hero-copy">
     <div class="hgroup">
       <div class="hset a">
-        <h1 style="margin:0"><img class="headline-img" src="frames/headline.png" alt="Look Good. Feel Better."></h1>
+        <h1 style="margin:0"><img class="headline-img" src="headline.png" alt="Look Good. Feel Better."></h1>
         <div class="tags"><span>Quality Cuts</span><i>/</i><span>Clean Vibes</span><i>/</i><span>Top Tier Service</span></div>
         <div class="cta-row"><a href="#book" class="btn solid">Book Now <span class="ar">→</span></a><a href="#services" class="btn">Explore Services</a></div>
       </div>
@@ -401,7 +401,7 @@ class Seq{
     if(share)share.subs.push(this);this.subs=[];
     new ResizeObserver(()=>this.resize()).observe(canvas);
   }
-  url(i){return `frames/${this.dir}/${String(i+1).padStart(3,'0')}.webp`}
+  url(i){return `${this.dir}-${String(i+1).padStart(3,"0")}.webp`}
   load(onProg){
     return new Promise(res=>{
       let done=0;const fin=()=>{done++;onProg&&onProg(done/this.count);if(done===this.count)res();if(done===1){this.draw();this.subs.forEach(s=>s.draw())}};
