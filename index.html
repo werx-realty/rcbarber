@@ -496,14 +496,16 @@ function init(){
     .from('.card',{y:80,opacity:0,stagger:.12,duration:.6,ease:'power3.out'},.4)
     .from('.big-word',{yPercent:60,opacity:0,duration:1},0);
   const tf={f:0};
-  gsap.timeline({scrollTrigger:{trigger:'#services',start:'top top',end:'+=220%',pin:true,scrub:.5}})
+  gsap.timeline({scrollTrigger:{trigger:'#services',start:'top top',end:'+=320%',pin:true,scrub:.6,invalidateOnRefresh:true}})
     .to(tf,{f:120,ease:'none',duration:7,onUpdate:()=>tools.set(tf.f)},.2)
     .to('.big-word',{xPercent:-12,duration:7,ease:'none'},.2)
     .to('.card',{y:i=>[-22,14,-16][i],rotate:i=>[-2,1.5,-1.5][i],duration:3.4,ease:'sine.inOut'},.2)
     .to('.card',{y:i=>[12,-18,10][i],rotate:i=>[1.5,-1.5,1.2][i],duration:3.4,ease:'sine.inOut'},3.6)
     .to('.svc-copy h2',{x:24,duration:3.4,ease:'sine.inOut'},.2)
     .to('.svc-copy h2',{x:-8,duration:3.4,ease:'sine.inOut'},3.6)
-    .to('.svc-copy .p',{x:14,duration:6.8,ease:'sine.inOut'},.2);
+    .to('.svc-copy .p',{x:14,duration:6.8,ease:'sine.inOut'},.2)
+    .to('#toolsStage',{y:()=>innerHeight*.85,rotate:150,scale:.8,ease:'power1.in',duration:3},7.4)
+    .to({},{duration:.3});
   /* swirl on hover */
   const hz=document.getElementById('toolsHover'),tc=document.getElementById('cvTools');let spin;
   hz.addEventListener('mouseenter',()=>{
@@ -517,8 +519,7 @@ function init(){
   /* CRAFT — scissors drop in from the tools */
   const sf={f:0};
   /* tools fall while the scissors come out — same scroll range so they flow together */
-  gsap.to('#toolsStage',{y:()=>innerHeight*.75,rotate:140,scale:.8,ease:'power1.in',
-    scrollTrigger:{trigger:'#craft',start:'top bottom',end:'top top',scrub:1,invalidateOnRefresh:true}});
+
   gsap.fromTo('#sciStage',{yPercent:-120,rotate:-50,scale:.6,opacity:0},{yPercent:-50,rotate:0,scale:1,opacity:1,ease:'power1.out',
     scrollTrigger:{trigger:'#craft',start:'top bottom',end:'top 5%',scrub:1}});
   gsap.from('.halo',{scale:.3,opacity:0,scrollTrigger:{trigger:'#craft',start:'top 60%',end:'top top',scrub:.5}});
