@@ -547,18 +547,18 @@ function init(){
   /* BOOK — chair keeps turning, mini tools + scissors spin around the ring */
   const C=2*Math.PI*94,ring=document.getElementById('ringC');
   ring.style.strokeDasharray=C;ring.style.strokeDashoffset=C;
-  gsap.timeline({scrollTrigger:{trigger:'#book',start:'top 85%',end:'top top',scrub:.5}})
+  gsap.timeline({scrollTrigger:{trigger:'#book',start:'top 45%',end:'top -45%',scrub:1}})
     .from('#bookScene .chairbox',{yPercent:30,scale:.7,opacity:0,ease:'power2.out',duration:1},0)
     .from('#miniT',{opacity:0,scale:.8,duration:1},.2)
     .from('#miniS',{xPercent:160,yPercent:120,rotate:220,opacity:0,ease:'power2.out',duration:1},.25)
     .from('.book-copy>*:not(.mini)',{x:-60,opacity:0,stagger:.1,duration:.6},.2)
     .from('.book-copy h2 .w>span',{yPercent:110,stagger:.08,duration:.5},.2);
-  gsap.timeline({scrollTrigger:{trigger:'#book',start:'top top',end:'+=120%',pin:true,scrub:.5}})
+  gsap.timeline({scrollTrigger:{trigger:'#book',start:'top top',end:'+=170%',pin:true,scrub:.6}})
     .fromTo(ring,{strokeDashoffset:C},{strokeDashoffset:0,ease:'power1.inOut',duration:.8},.1)
     .to('#miniS',{rotate:-260,y:-40,duration:1,ease:'none'},0)
     .to('#bookScene .ring',{rotate:120,duration:1,ease:'none'},0);
   const mt={f:0};
-  gsap.to(mt,{f:120,ease:'none',onUpdate:()=>miniT.set(mt.f),scrollTrigger:{trigger:'#book',start:'top 80%',end:'bottom top',scrub:.5}});
+  gsap.to(mt,{f:120,ease:'none',onUpdate:()=>miniT.set(mt.f),scrollTrigger:{trigger:'#book',start:'top 35%',end:'bottom top',scrub:.8}});
   const bk={chair:0,t:0,s:0,on:false,boost:0};
   ScrollTrigger.create({trigger:'#book',start:'top bottom',end:'bottom top',onToggle:s=>bk.on=s.isActive,onUpdate:s=>bk.boost=Math.min(4,Math.abs(s.getVelocity())/400)});
   gsap.ticker.add((t,dt)=>{
